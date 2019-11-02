@@ -1,1 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/* @import "~font-awesome/css/font-awesome.css"; */
+@import "~@fortawesome/fontawesome-free/css/fontawesome.css";
+body{
+    margin:0 !important;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* return calendar */
+ngb-datepicker .ngb-dp-months .ngb-dp-month ngb-datepicker-month-view .ngb-dp-week .hidden{
+    display: inline-block !important;
+    pointer-events: none !important;
+}
+ngb-datepicker .ngb-dp-months .ngb-dp-month ngb-datepicker-month-view .ngb-dp-week .disabled{
+    color: #999999 !important;
+    pointer-events: none !important;
+}
+ngb-datepicker .ngb-dp-months{
+    flex-direction: column !important;
+}
+ngb-datepicker .ngb-dp-months .ngb-dp-month ngb-datepicker-month-view .ngb-dp-week{
+    width: 100% !important;
+}
+ngb-datepicker .ngb-dp-months .ngb-dp-month ngb-datepicker-month-view .ngb-dp-week .ngb-dp-day,
+ngb-datepicker .ngb-dp-months .ngb-dp-month ngb-datepicker-month-view .ngb-dp-week .ngb-dp-weekday{
+    width: 14.2% !important;
+    height: 37px;
+    text-align: center !important;
+}
+
+.cdk-overlay-container .cdk-global-overlay-wrapper .cdk-overlay-pane .mat-dialog-container{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.cdk-overlay-container .cdk-global-overlay-wrapper .cdk-overlay-pane .mat-dialog-container .ng-star-inserted .mat-dialog-content{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* airport dialod */
+.cdk-overlay-container .cdk-global-overlay-wrapper .cdk-overlay-pane .mat-dialog-container{
+    padding: 0 !important;
+}

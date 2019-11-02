@@ -1,0 +1,19 @@
+.custom-day {
+    text-align: center;
+    /* padding: 0.2rem 0.3rem; */
+    display: inline-block;
+    height:37px;
+    width: 37px;
+    padding-top:3px;
+  }
+  .custom-day.focused {
+    background-color: #e6e6e6;
+  }
+  .custom-day.range, .custom-day:hover {
+    background-color: rgb(2, 117, 216);
+    color: white;
+    border-radius: 37px;
+  }
+  .custom-day.faded {
+    background-color: rgba(2, 117, 216, 0.5);
+  }

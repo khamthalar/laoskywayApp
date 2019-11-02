@@ -3,16 +3,48 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MaterialModule} from './material';
+
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReturnCalendarComponent } from './components/return-calendar/return-calendar.component';
+import { BookflightComponent } from './components/bookflight/bookflight.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { AirportsComponent } from './components/airports/airports.component';
+import { HttpClientModule } from '@angular/common/http';
+
+import { FilterPipe } from './pipes/filter.pipe';
+import { SelectClassComponent } from './components/select-class/select-class.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ReturnCalendarComponent,
+    BookflightComponent,
+    AirportsComponent,
+    FilterPipe,
+    SelectClassComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    NgbModule.forRoot(),
+
+    FormsModule,
+    ReactiveFormsModule,
+    AngularFontAwesomeModule,
+
+    HttpClientModule
   ],
+  entryComponents:[ReturnCalendarComponent,AirportsComponent],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports:[
+    FilterPipe
+  ]
+
 })
 export class AppModule { }

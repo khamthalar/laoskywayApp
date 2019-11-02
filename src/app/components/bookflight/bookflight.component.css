@@ -1,0 +1,225 @@
+.title_bar {
+    height: 65px;
+    background-color: brown;
+}
+
+.content_area {
+    margin: 0 7px;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: brown !important;
+}
+
+.select_date {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    height: 75px;
+    justify-content: space-around;
+}
+
+.departs, .returns {
+    width: 170px;
+    height: 59px;
+    align-self: center;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 1px solid gray;
+}
+
+.left {
+    float: left;
+}
+
+.icon {
+    padding-left: 10px;
+    margin-right: 5px;
+    color: #8c8c8c;
+    font-size: 40px;
+}
+
+.select_date_body {
+    color: brown;
+}
+
+.content_date {
+    margin-top: 0;
+    font-size: 30px;
+    margin-right: 2px;
+}
+
+.select_date_content {
+    margin-top: -4px;
+}
+
+.content_day {
+    margin-top: -3px;
+}
+
+.select_cityPair {
+    position: relative;
+}
+
+.departure_city, .arrival_city {
+    background-color: brown;
+    height: 70px;
+    /* margin-left: 20px;
+    margin-right: 20px; */
+    border-radius: 15px;
+    padding: 5px 20px;
+    color: white;
+}
+
+.arrival_city {
+    margin-top: 7px;
+}
+
+.cityPair_btn {
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 43.5px;
+    right: 30px;
+    border-radius: 50px;
+    color: brown;
+    text-align: center;
+    font-size: 42px;
+    padding-top: 7px;
+}
+
+.cityPair_icon {
+    height: 45px;
+    margin: auto;
+}
+
+.passenger_item{
+    position: relative;
+    /* background-color: yellow; */
+    height: 50px;
+}
+.img_adult,.img_child{
+    width: 15px;
+}
+.img_infant{
+    width: 20px;
+}
+.passenger_img{
+    width: 30px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+.passenger_label{
+    position: absolute;
+    bottom: -2.5px;
+    left: 32px;
+    font-size: 18px;
+}
+
+.adult_num{
+    position: absolute;
+    bottom: 0;
+    left: 225px;
+    width: 80px;
+    text-align: center;
+}
+.btn_minus{
+    position: absolute;
+    bottom: 0;
+    left: 200px;
+    width: 25px;
+    height: 25px;
+    border-radius: 20px;
+    font-size: 15px;
+    background-color:rgba(255, 255, 255,0);
+    border:3px solid brown;
+    color: brown;
+    padding: 0;
+}
+.btn_plus{
+    position: absolute;
+    bottom: 0;
+    left: 305px;
+    width: 25px;
+    height: 25px;
+    border-radius: 20px;
+    font-size: 15px;
+    border:0;
+    color: white;
+    background-color: brown;
+    padding: 0;
+}
+.btn_continue{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+
+.loading{
+    width: 100%;
+    height: 100%;
+    position:fixed;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 0;
+    z-index: 999;
+    display: flex;
+}
+
+
+.spinner {
+    margin: 100px auto;
+    width: 50px;
+    height: 40px;
+    text-align: center;
+    font-size: 10px;
+    align-self: center;
+  }
+  
+  .spinner > div {
+    background-color: #ffffff;
+    height: 100%;
+    width: 6px;
+    margin-right: 1px;
+    display: inline-block;
+    
+    -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+    animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  }
+  
+  .spinner .rect2 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+  }
+  
+  .spinner .rect3 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+  }
+  
+  .spinner .rect4 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+  }
+  
+  .spinner .rect5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+  }
+  
+  @-webkit-keyframes sk-stretchdelay {
+    0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+    20% { -webkit-transform: scaleY(1.0) }
+  }
+  
+  @keyframes sk-stretchdelay {
+    0%, 40%, 100% { 
+      transform: scaleY(0.4);
+      -webkit-transform: scaleY(0.4);
+    }  20% { 
+      transform: scaleY(1.0);
+      -webkit-transform: scaleY(1.0);
+    }
+  }

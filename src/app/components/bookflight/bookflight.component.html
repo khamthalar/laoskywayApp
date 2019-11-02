@@ -1,0 +1,118 @@
+<div>
+  <div class="title_bar"></div>
+  <div class="content_area">
+    <div>
+      <mat-tab-group color="accent" style="width: 100%;" mat-stretch-tabs>
+        <mat-tab label="RETURN"></mat-tab>
+        <mat-tab label="ONE WAY"></mat-tab>
+      </mat-tab-group>
+    </div>
+    <div class="select_date">
+      <div class="departs" (click)="openDialog()">
+        <div class="icon left"><i class="fa fa-calendar"></i></div>
+        <div class="select_date_body left">
+          <div class="select_date_title">Departure</div>
+          <div class="select_date_content">
+            <div class="content_date left">{{ departures_date | date:'dd' }}</div>
+            <div class="select_date_content_month_year left">
+              <div class="content_month_year">{{departures_month}} {{ departures_date | date:'yyyy' }}</div>
+              <div class="content_day">{{departures_day}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="returns" (click)="openDialog()">
+        <div class="icon left"><i class="fa fa-calendar"></i></div>
+        <div class="select_date_body left">
+          <div class="select_date_title">Return</div>
+          <div class="select_date_content">
+            <div class="content_date left">{{ returns_date | date:'dd' }}</div>
+            <div class="select_date_content_month_year left">
+              <div class="content_month_year">{{returns_month}} {{ returns_date | date:'yyyy' }}</div>
+              <div class="content_day">{{returns_day}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="select_cityPair">
+      <div class="departure_city" (click)="selectAirport('depart')">
+        <p>Departure from:</p>
+        <h4 style="padding-top: 0; margin-top: -10px;">{{departure_city}}</h4>
+      </div>
+      <div class="cityPair_btn">
+        <!-- <i class="fa fa-sync cityPair_icon"></i> -->
+        <img src="assets/img/arrow.png" class="img-responsive cityPair_icon" alt="Image">
+
+      </div>
+      <div class="arrival_city" (click)="selectAirport('arrival')">
+        <p>Destination to:</p>
+        <h4 style="padding-top: 0; margin-top: -10px;">{{destination_city}}</h4>
+      </div>
+    </div>
+
+    <div class="select_passenger">
+      <div class="adult passenger_item">
+        <div class="passenger_img">
+          <img src="assets/img/adult.png" class="img_adult">
+        </div>
+        <div class="passenger_label">
+          <p style="padding: 0; margin: 0;"> Adult <span style="color: gray;">(12 yrs+)</span> </p>
+        </div>
+        <button class="btn_minus" (click)="passenger_minus('adult')"><i class="fa fa-minus"></i></button>
+        <div class="adult_num">
+          <h3 style="padding: 0; margin: 0;">{{adult_num}}</h3>
+        </div>
+        <button class="btn_plus" (click)="passenger_plus('adult')"><i class="fa fa-plus"></i></button>
+      </div>
+
+      <div class="child passenger_item">
+        <div class="passenger_img">
+          <img src="assets/img/child.png" class="img_child">
+        </div>
+        <div class="passenger_label">
+          <p style="padding: 0; margin: 0;"> Child <span style="color: gray;">(2-12 yrs)</span> </p>
+        </div>
+
+        <button class="btn_minus" (click)="passenger_minus('child')"><i class="fa fa-minus"></i></button>
+
+        <div class="adult_num">
+          <h3 style="padding: 0; margin: 0;">{{child_num}}</h3>
+        </div>
+
+        <button class="btn_plus" (click)="passenger_plus('child')"><i class="fa fa-plus"></i></button>
+
+      </div>
+
+      <div class="infant passenger_item">
+        <div class="passenger_img">
+          <img src="assets/img/infant.png" class="img_infant">
+        </div>
+        <div class="passenger_label">
+          <p style="padding: 0; margin: 0;"> Infant <span style="color: gray;">(<2 yrs)</span> </p> </div> <button
+                class="btn_minus" (click)="passenger_minus('infant')"><i class="fa fa-minus"></i></button>
+
+                <div class="adult_num">
+                  <h3 style="padding: 0; margin: 0;">{{infant_num}}</h3>
+                </div>
+
+                <button class="btn_plus" (click)="passenger_plus('infant')"><i class="fa fa-plus"></i></button>
+
+        </div>
+      </div>
+
+    </div>
+    <div class="btn_continue">
+      <button type="button" class="btn btn-danger btn-lg btn-block" (click)="find_flights()">Continue</button>
+    </div>
+  </div>
+
+  <div class="loading" *ngIf="loading">
+    <div class="spinner">
+      <div class="rect1"></div>
+      <div class="rect2"></div>
+      <div class="rect3"></div>
+      <div class="rect4"></div>
+      <div class="rect5"></div>
+    </div>
+  </div>

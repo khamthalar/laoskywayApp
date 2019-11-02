@@ -1,0 +1,20 @@
+<div class="title">
+    <input name="searchString" [(ngModel)]="searchString" type="text" placeholder="fltnumber Search" aria-label="Search"
+        style="float: left">
+    <button type="button" class="btn_close" (click)="closed()"><i class="fa fa-times"></i></button>
+</div>
+<!-- <tbody>
+    <tr *ngFor="let item of data | filter : 'name' : searchString; let id = index">
+        <td>
+            <button type="button" class="btn_city">{{item.name}}</button>
+        </td>
+    </tr>
+</tbody> -->
+
+
+<ul class="list-group ls_city" *ngFor="let item of airports | filter : 'name' : searchString; let id = index">
+    <li class="list-group-item city_item" (click)="onSelect(item.code,item.name)">
+        {{item.name}}
+    </li>
+</ul>
+<pre>{{data | json }}</pre>
