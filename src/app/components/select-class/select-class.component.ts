@@ -7,6 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./select-class.component.css']
 })
 export class SelectClassComponent implements OnInit {
+
+  customer_search_value:any;
+
   data: any;
   cityPair: string;
 
@@ -28,6 +31,9 @@ export class SelectClassComponent implements OnInit {
 
     this.default_depart_airport= this.router.getCurrentNavigation().extras.state.depart_name;
     this.default_arrival_airport= this.router.getCurrentNavigation().extras.state.arrival_name;
+
+    this.customer_search_value = this.router.getCurrentNavigation().extras.state.cus_input;
+
   }
 
   ngOnInit() {
@@ -46,7 +52,7 @@ export class SelectClassComponent implements OnInit {
     this.returns = obj_returns;
   }
   back() {
-    this.router.navigate(["bookflight"]);
+    this.router.navigate(["bookflight"],{ state: {data:this.customer_search_value} });
   }
 
 }
