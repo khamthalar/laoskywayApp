@@ -13,8 +13,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./bookflight.component.css']
 })
 export class BookflightComponent implements OnInit {
-
-  constructor(public dialog: MatDialog, private http: HttpClient, private router: Router) { }
+  data: any;
+  constructor(public dialog: MatDialog, private http: HttpClient, private router: Router) {
+    this.data = this.router.getCurrentNavigation().extras.state.data;
+  }
   months_text = ['ມັງກອນ', 'ກຸມພາ', 'ມີນາ', 'ເມສາ', 'ພຶດສະພາ', 'ມິຖຸນາ', 'ກໍລະກົດ', 'ສິງຫາ', 'ກັນຍາ', 'ຕຸລາ', 'ພະຈິກ', 'ທັນວາ'];
   days_text = ['ວັນອາທິດ', 'ວັນຈັນ', 'ວັນອັງຄານ', 'ວັນພຸດ', 'ວັນພະຫັດ', 'ວັນສຸກ', 'ວັນເສົາ'];
   departures_date: Date;
@@ -22,9 +24,9 @@ export class BookflightComponent implements OnInit {
   departures_month: string;
   departures_day: string;
 
-  adult_num: number = 1;
-  child_num: number = 0;
-  infant_num: number = 0;
+  adult_num: number;
+  child_num: number;
+  infant_num: number;
 
   returns_month: string;
   returns_day: string;
@@ -40,8 +42,7 @@ export class BookflightComponent implements OnInit {
   destination_city: string;
   destination_city_code: string;
 
-  todayDate = new Date();
-  tomorrow = new Date(this.todayDate.getFullYear(), this.todayDate.getMonth(), this.todayDate.getDate() + 2);
+
 
   travelOption_result: any;
 
@@ -161,15 +162,20 @@ export class BookflightComponent implements OnInit {
 
   ngOnInit() {
 
+    //set defualt passenger count
+    this.adult_num = this.data.adult_num;
+    this.child_num = this.data.child_num;
+    this.infant_num = this.data.infant_num;
+
     // set defualt city
-    this.departure_city = "--";
-    this.departure_city_code = "";
-    this.destination_city = "--";
-    this.destination_city_code = "";
+    this.departure_city = this.data.departure_city;
+    this.departure_city_code = this.data.departure_city_code;
+    this.destination_city = this.data.destination_city;
+    this.destination_city_code = this.data.destination_city_code;
 
     // set defualt date when start form
-    this.departures_date = this.todayDate;
-    this.returns_date = this.tomorrow;
+    this.departures_date = this.data.departures_date;
+    this.returns_date = this.data.returns_date;
     this.departures_month = this.months_text[this.departures_date.getMonth()];
     this.departures_day = this.days_text[this.departures_date.getDay()];
     this.returns_month = this.months_text[this.returns_date.getMonth()];
@@ -202,14 +208,26 @@ export class BookflightComponent implements OnInit {
     this.http.get<any>('https://intelisys-api.intelisys.ca/RESTv1/travelOptions', { params: param, headers: header }).subscribe(
       result => {
         this.travelOption_result = result;
+        let customer_input = {
+          departures_date: this.departures_date,
+          returns_date: this.returns_date,
+          departure_city: this.departure_city,
+          departure_city_code: this.departure_city_code,
+          destination_city: this.destination_city,
+          destination_city_code: this.destination_city_code,
+          child_num: this.child_num,
+          infant_num: this.infant_num,
+          adult_num: this.adult_num
+        };
         this.router.navigate(["selectClass"], {
           state: {
             data: this.travelOption_result,
             cityPair: this.departure_city_code + "-" + this.destination_city_code,
             depart: this.departure_city_code,
             arrival: this.destination_city_code,
-            depart_name:this.departure_city,
-            arrival_name:this.destination_city
+            depart_name: this.departure_city,
+            arrival_name: this.destination_city,
+            cus_input: customer_input
           }
         });
         this.loading = false;
