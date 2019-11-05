@@ -5,7 +5,7 @@
     </button>
   </div>
   <div class="content_area">
-    <h4 style="color: brown; margin-bottom: 0; padding-bottom: 0;">Select Outbound Flight <img
+    <!-- <h4 style="color: brown; margin-bottom: 0; padding-bottom: 0;">Select Outbound Flight <img
         src="assets/img/departures_plane.svg" class="departures_icon"></h4>
 
     <div class="departure" *ngFor="let item of departures">
@@ -30,29 +30,6 @@
                   <div class="dot"></div>
                   <div class="leg_item">{{leg.arrival.airport.code}}</div>
                 </div>
-                <!-- <ng-container *ngIf="leg.arrival.airport.code!=default_arrival">
-                  <div class="stop">
-                    <div class="dot"></div>
-                    <div class="leg_item">{{leg.arrival.airport.code}}</div>
-                  </div>
-                </ng-container> -->
-                <!-- 
-                <ng-template #showleg>
-                  <div class="stop">
-                    <div class="dot"></div>
-                    <div class="leg_item">{{leg.arrival.airport.code}}</div>
-                  </div>
-                </ng-template>
-                <ng-template #hideleg>
-                    <div class="stop" style="display: none;">
-                      <div class="dot"></div>
-                      <div class="leg_item">{{leg.arrival.airport.code}}</div>
-                    </div>
-                  </ng-template> -->
-                <!-- <div class="stop" *ngIf="leg.arrival.airport.code!=default_arrival; else hidden">
-                  <div class="dot"></div>
-                  <div class="leg_item">{{leg.arrival.airport.code}}</div>
-                </div> -->
               </div>
             </div>
           </div>
@@ -91,23 +68,15 @@
                   <div class="price_name">{{classPrice.cabinClass.code}}/{{classPrice.fareClass.code}}</div>
                 </div>
           </div>
-          <!-- <div class="price_frame">
-            <div class="price_amount">620,000 ₭</div>
-            <div class="price_name">FLEXI</div>
-          </div>
-          <div class="price_frame">
-            <div class="price_amount">599,000 ₭</div>
-            <div class="price_name">LOVE</div>
-          </div>
-          <div class="price_frame">
-            <div class="price_amount">499,000 ₭</div>
-            <div class="price_name">ROGER</div>
-          </div>
-          <div class="price_frame">
-            <div class="price_amount">499,000 ₭</div>
-            <div class="price_name">ROGER</div>
-          </div> -->
         </div>
+      </div>
+    </div> -->
+
+
+    <div class="departure_area">
+      <div class="departure_selected_item"></div>
+      <div class="departure_content">
+        <app-depart></app-depart>
       </div>
     </div>
   </div>

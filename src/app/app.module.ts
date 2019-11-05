@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { FilterPipe } from './pipes/filter.pipe';
 import { SelectClassComponent } from './components/select-class/select-class.component';
+import { DepartureItemsComponent } from './components/departure-items/departure-items.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SelectClassComponent } from './components/select-class/select-class.com
     BookflightComponent,
     AirportsComponent,
     FilterPipe,
-    SelectClassComponent
+    SelectClassComponent,
+    DepartureItemsComponent
   ],
   imports: [
     BrowserModule,

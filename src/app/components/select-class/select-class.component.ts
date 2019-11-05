@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { DepartureItemsComponent } from '../departure-items/departure-items.component';
 
 @Component({
   selector: 'app-select-class',
@@ -7,6 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./select-class.component.css']
 })
 export class SelectClassComponent implements OnInit {
+
+  @ViewChild('depart') depart:DepartureItemsComponent;
 
   customer_search_value:any;
 

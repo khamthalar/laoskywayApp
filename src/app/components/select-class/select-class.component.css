@@ -180,3 +180,18 @@
 .hide_div{
     display: none;
 }
+
+
+.departure_area{
+    position: relative;
+}
+.departure_selected_item{
+    position: absolute;
+    z-index: 999;
+    top: 0;
+}
+.departure_content{
+    position: absolute;
+    z-index: 99;
+    top: 0;
+}
