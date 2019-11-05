@@ -7,6 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DepartureItemsComponent implements OnInit {
 
+  cityPair: string;
+
+  departures: any;
+
+  default_depart: string;
+  default_arrival: string;
+
+  default_depart_airport: string;
+  default_arrival_airport: string;
+
   constructor() { }
 
   ngOnInit() {

@@ -51,8 +51,17 @@ export class SelectClassComponent implements OnInit {
         obj_returns.push(element);
       }
     });
-    this.departures = obj_depart;
+    // this.departures = obj_depart;
     this.returns = obj_returns;
+    this.depart.departures = obj_depart;
+
+    this.depart.cityPair=this.cityPair;
+  
+    this.depart.default_depart=this.default_depart;
+    this.depart.default_arrival=this.default_arrival;
+  
+    this.depart.default_depart_airport=this.default_depart_airport;
+    this.depart.default_arrival_airport=this.default_arrival_airport;
   }
   back() {
     this.router.navigate(["bookflight"],{ state: {data:this.customer_search_value} });

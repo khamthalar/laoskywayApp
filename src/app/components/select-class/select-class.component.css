@@ -1,8 +1,21 @@
+/* .nav_bar {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99999;
+} */
+
 .title_bar {
     position: relative;
     height: 65px;
     background-color: brown;
 }
+
+/* .content_area {
+    margin: 0 7px;
+    margin-top: 65px;
+} */
 
 .btn_back {
     position: absolute;
@@ -15,183 +28,27 @@
     border: none;
 }
 
-.departures_icon {
-    width: 30px;
-}
-
-.city_pairs {
-    width: 100%;
-    height: 70px;
-    border: 1px solid gray;
-    border-radius: 10px;
+/* .departure_area {
     position: relative;
 }
 
-.bottom_mark {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 8.5px 14.7px 8.5px;
-    border-color: transparent transparent #ffffff transparent;
-    left: calc(50% - 8.3px);
-    bottom: -1px;
-    z-index: 999;
-}
-
-.bottom_mark_back {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 9px 15.6px 9px;
-    border-color: transparent transparent gray transparent;
-    left: calc(50% - 9px);
-    bottom: 0px;
-    z-index: 1;
-}
-
-.content_area {
-    margin: 0 7px;
-}
-
-.class_label{
-    position: absolute;
-    width: 100px;
-    text-align: right;
-    right: 5px;
-}
-.leg_fram{
-    width: 250px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    margin-left: 3px;
-}
-.depart_city{
-    font-weight: bold;
-    font-size: 23px;
-}
-.arrival_city{
-    font-weight: bold;
-    font-size: 23px;
-}
-.leg_line{
-    /* background-color: chartreuse; */
-    height: 100%;
-    flex-grow: 1;
-    position: relative;
-}
-.line{
-    width: 100%;
-    height: 1px;
-    background-color: gray;
-    margin-top: 19.5px;
-}
-.line_stop{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    display: flex;
-    justify-content:space-around;
-}
-.stop{
-    min-width: 20px;
-    height: 100%;
-
-    position: relative;
-}
-.dot{
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border-radius: 5px;
-    background-color: red;
-    border: 3px solid white;
-    top: 15px;
-    left: calc(50% - 5px);
-
-}
-.leg_item{
-    position: absolute;
-    top: 25px;
-    text-align: center;
-    width: 100%;
-    font-size: 10px;
-    color: gray;
-}
-
-.depart_date{
-    margin-left: 5px;
-    font-weight: bold;
-    color: gray;
-    font-size:14px;
-    margin-top: 4px;
-}
-.class_list{
-    padding: 7px;
-    border: 1px solid gray;
-    border-radius: 10px;
-    margin-top: 5px;
-}
-
-.flight_time{
-    width: 100%;
-    display: flex;
-    justify-content:space-between;
-}
-.arrival_detail{
-    text-align: right;
-    width: 130px;
-}
-.flight_detail{
-    text-align: center;
-}
-.departures_detail{
-    width: 130px;
-}
-
-.class_price_list{
-    display: flex;
-    justify-content:space-around;
-    flex-flow: row wrap;
-}
-.price_frame{
-    border:1px solid brown;
-    border-radius: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    text-align: center;
-    min-width: 100px;
-}
-.price_name{
-    background-color: brown;
-    color: white;
-    font-weight: bold;
-    border-radius:0 0 8px 8px;
-    text-align: center;
-}
-.price_amount{
-    margin-top:8px;
-    margin-bottom: 8px;
-    font-size: 15px;
-}
-.hide_div{
-    display: none;
-}
-
-
-.departure_area{
-    position: relative;
-}
-.departure_selected_item{
+.departure_selected_item {
     position: absolute;
     z-index: 999;
     top: 0;
 }
-.departure_content{
+
+.departure_content {
     position: absolute;
     z-index: 99;
     top: 0;
+    width: 100%;
+} */
+
+
+.content_area{
+    width: 100%;
+    height: calc(100vh - 65px);
+    padding: 0 7px;
+    overflow: scroll;
 }

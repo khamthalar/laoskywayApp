@@ -1,3 +1,66 @@
-<p>
-  departure-items works!
-</p>
+    <h4 style="color: brown; margin-bottom: 0; padding-bottom: 0;">Select Outbound Flight <img
+        src="assets/img/departures_plane.svg" class="departures_icon"></h4>
+
+    <div class="departure" *ngFor="let item of departures">
+
+      <div class="city_pairs">
+        <div class="bottom_mark"></div>
+        <div class="bottom_mark_back"></div>
+
+        <div class="class_label">
+          <span>{{item.numberOfStops - 1}} Stop</span><br>
+          <span style="font-weight: bold;">Economy</span><br>
+          <a href="#">details</a>
+        </div>
+
+        <div class="leg_fram">
+          <div class="depart_city">{{default_depart}}</div>
+          <div class="leg_line">
+            <div class="line"></div>
+            <div class="line_stop">
+              <div *ngFor="let leg of item.flights" [ngClass]="{hide_div: leg.arrival.airport.code==default_arrival}">
+                <div class="stop">
+                  <div class="dot"></div>
+                  <div class="leg_item">{{leg.arrival.airport.code}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="arrival_city">{{default_arrival}}</div>
+        </div>
+        <div class="depart_date">{{item.departureDate | date:'dd MMM yyyy (EEE)'}}</div>
+
+      </div>
+      <div class="class_list">
+        <div class="flight_time">
+          <div class="departures_detail">
+            <span>Departure</span><br>
+            <span *ngFor="let leg of item.flights">
+              <span *ngIf="leg.departure.airport.code==default_depart"
+                style="font-size: 25px; font-weight: bold;">{{leg.departure.scheduledTime | date:'hh:mm'}}</span>
+            </span><br>
+            <span>{{default_depart_airport}}</span>
+          </div>
+          <div class="flight_detail">
+            <img src="assets/img/plane.svg" style="width: 25px;"><br>
+            <span>1h 0m</span>
+          </div>
+          <div class="arrival_detail">
+            <span>Arrival</span><br>
+            <span *ngFor="let leg of item.flights">
+              <span *ngIf="leg.arrival.airport.code==default_arrival"
+                style="font-size: 25px; font-weight: bold;">{{leg.arrival.scheduledTime | date:'hh:mm'}}</span>
+            </span><br>
+            <span>{{default_arrival_airport}}</span>
+          </div>
+        </div>
+        <div class="class_price_list">
+          <div *ngFor="let classPrice of item.fareOptions">
+              <div class="price_frame">
+                  <div class="price_amount">{{classPrice.fareCharges[0].currencyAmounts[0].totalAmount}} {{classPrice.fareCharges[0].currencyAmounts[0].currency.code}}</div>
+                  <div class="price_name">{{classPrice.cabinClass.code}}/{{classPrice.fareClass.code}}</div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
